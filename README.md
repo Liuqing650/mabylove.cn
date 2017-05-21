@@ -1,6 +1,6 @@
 # Ant Design 小项目
 
-示例：[Mabylove](www.mabylove.cn)
+示例：[Mabylove](http://www.mabylove.cn)
 
 ## 项目结构
 
