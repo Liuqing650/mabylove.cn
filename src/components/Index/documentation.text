@@ -1,0 +1,40 @@
+如何使用：
+
+1. 导出文件为 react，
+
+2. 将 Home 文件包直接拷到 routes 文件夹下。
+
+3. 修改 router.js 里的 IndexPage 的路径: import IndexPage from './routes/Home';
+
+4. 如果用的是 antd 的脚手 dva-cli (https://github.com/dvajs/dva-cli) 需要注意加上 /antMotion_style\.less/ 的.
+   // Parse all less files as css module.
+   webpackConfig.module.loaders.forEach(function (loader, index) {
+     if (typeof loader.test === 'function' && loader.test.toString().indexOf('\\.less$') > -1) {
+       loader.include = [/node_modules/, /antMotion_style\.less/];
+       loader.test = /\.less$/;
+     }
+     if (loader.test.toString() === '/\\.module\\.less$/') {
+       loader.exclude = [/node_modules/, /antMotion_style\.less/];
+       loader.test = /\.less$/;
+     }
+     if (typeof loader.test === 'function' && loader.test.toString().indexOf('\\.css$') > -1) {
+       loader.include = /node_modules/;
+       loader.test = /\.css$/;
+     }
+     if (loader.test.toString() === '/\\.module\\.css$/') {
+       loader.exclude = /node_modules/;
+       loader.test = /\.css$/;
+     }
+   });
+
+5. 安装依赖, package.json 里的 dependencies 加下以下：
+"antd": "~1.7.0",
+"rc-queue-anim": "~0.12.6",
+"rc-scroll-anim": "~0.6.0",
+"rc-tween-one": "~0.11.11",
+"rc-banner-anim": "~0.5.4", // 如果用的是多屏滑动型的 banner，加上这条。
+
+以上具体版本按最新的来修改。
+
+6. 将当前文件删除。
+
