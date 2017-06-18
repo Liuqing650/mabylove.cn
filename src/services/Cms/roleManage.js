@@ -11,7 +11,7 @@ export async function getRoleList(params) {
 
 export async function queryMenu(params) {
   return request(config.host+'/menuManage/getMenuByRoleId', {
-    method: 'get',
+    method: 'post',
     body: qs.stringify(params),
     data:params,
   })
@@ -29,7 +29,7 @@ export async function add(params) {
 /*查询树结构*/
 export async function getMenuByRoleId(params) {
   return request(config.host+'/menuManage/getMenuByRoleId', {
-    method: 'get',
+    method: 'post',
     body: qs.stringify(params),
     data:params,
   })

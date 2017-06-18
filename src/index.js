@@ -18,6 +18,7 @@ app.model(require('./models/myself'));
 app.model(require('./models/practice'));
 app.model(require('./models/showProject'));
 app.model(require('./models/showImage'));
+app.model(require('./models/showProjects/cronTabs'));
 app.model(require('./models/uploadFile'));
 app.model(require('./models/userRegist'));
 app.model(require('./models/blog'));

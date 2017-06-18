@@ -44,7 +44,7 @@ class Content extends React.Component {
       { children: { img: { children: webUrl.homeIcon.one.md }, content: { children: '成长经历' },href: webUrl.homeIcon.one.md} },
       { children: { img: { children: webUrl.homeIcon.two.md }, content: { children: '作品展示' }, href:'#/showProject'} },
       { children: { img: { children: webUrl.homeIcon.three.md } ,content: { children: '幸福广场' },href:'#/blog' } },
-      { children: { img: { children: webUrl.homeIcon.four.md } ,content: { children: '个人管理' },href: webUrl.homeIcon.four.md } },
+      { children: { img: { children: webUrl.homeIcon.four.md } ,content: { children: '个人简历' },href: webUrl.homeIcon.four.md } },
       { children: { img: { children: webUrl.homeIcon.five.md } ,content: { children: '技术分享' },href: webUrl.homeIcon.five.md } },
       { children: { img: { children: webUrl.homeIcon.six.md } ,content: { children: '动手实战' }, href:'#/practice' } },
       

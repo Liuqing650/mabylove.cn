@@ -15,7 +15,7 @@ const blogComment = ({
 				<Row>
 					<Col span={4}>
 						<div className={styles.leftUpStyle}>
-							<img className={styles.commentUserImg} src={item.avatar?item.avatar:webUrl.default.headPicBaidu}/>
+							<img className={styles.commentUserImg} src={item.avatar?item.avatar:webUrl.default.headPic}/>
 						</div>
 						<div className={styles.userNameStyle}>{item.nick_name}</div>
 					</Col>

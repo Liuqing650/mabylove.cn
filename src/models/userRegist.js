@@ -83,6 +83,7 @@ export default {
 			obj['invite']= payload.invite;
 			const judgeRepeat = yield call(repeatJudgeInvite,obj);
 			if(judgeRepeat&&judgeRepeat.length=='1') {
+				console.log('addUser---------->',payload);
 				const data = yield call(regist,payload);
 				if(data) {
 					yield put({type:'clearInvite'})

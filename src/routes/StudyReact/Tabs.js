@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'dva';
-import Tabs from '../../components/StudyReact/no1/Tabs';
+import App from '../../components/StudyReact/no1/App';
 
 function TabsReact(){
 
-	const TabsProps = {}
+	const AppProps = {}
 
 	return (
 		<div>
-			<Tabs {...TabsProps} />
+			<App {...AppProps} />
 		</div>
 	)
 }

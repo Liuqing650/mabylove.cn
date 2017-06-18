@@ -47,7 +47,7 @@ export default {
 					descript:'用于计划任务组中进行时长或时间段执行函数表达式',
 					go:'oppen',
 					state: 1,
-					src:'#'
+					src:'/cron'
 				},
 				{	name:'图片分享',
 					content:'请带上一双别致的眼看世界,同时可以随时上传新的图片到文件中,请文明分享和使用图片',
@@ -62,6 +62,13 @@ export default {
 					go:'music',
 					state: 1,
 					src:'#'
+				},
+				{	name:'游戏设计',
+					content:'React设计的简单游戏，游戏用于开发自己的脑洞',
+					descript:'',
+					go:'game',
+					state: 1,
+					src:'/game/cargame'
 				},
 				{	name:'未完待续',
 					content:'我的梦远远没有完,你们呢?',

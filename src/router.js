@@ -9,6 +9,7 @@ import HelpDoc from './routes/HelpDoc';
 import Myself from './routes/Myself';
 import Practice from './routes/Practice';
 import ShowProject from './routes/ShowProject';
+import CronTabs from './routes/ShowProjects/CronTabs';
 import ShowImage from './routes/ShowImage';
 import UploadFile from './routes/UploadFile';
 import BlogInfo from './routes/Blog/BlogInfo';
@@ -19,6 +20,7 @@ import NewTask from './routes/Task/NewTask';
 import AllotTask from './routes/Task/AllotTask';
 import ExecuteTask from './routes/Task/ExecuteTask';
 import ProgressTask from './routes/Task/ProgressTask';
+import CarGame from './routes/Game/CarGame/CarGame';
 
 
 import App from './routes/Cms/app';
@@ -49,6 +51,7 @@ export default function ({ history }) {
         <Route path="/myself" component={Myself} />
         <Route path="/practice" component={Practice} />
         <Route path="/showProject" component={ShowProject} />
+        <Route path="/cron" component={CronTabs} />
         <Route path="/showImage" component={ShowImage} />
         <Route path="/uploadFile" component={UploadFile} />
         <Route path="/blog" component={BlogInfo} />
@@ -59,6 +62,7 @@ export default function ({ history }) {
         <Route path="/task/allot" component={AllotTask} />
         <Route path="/task/execute" component={ExecuteTask} />
         <Route path="/task/progress" component={ProgressTask} />
+        <Route path="/game/cargame" component={CarGame} />
         
         <Route path="/test" component={Test} />
       	<Route path="/react" component={TabsReact} />

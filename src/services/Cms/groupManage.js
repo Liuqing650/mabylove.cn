@@ -21,7 +21,7 @@ export async function add(params) {
 // 获取学生列表
 export async function getGroupUserStudent(params) {
   return request(config.host+'/groupManage/getGroupUserStudent', {
-    method: 'get',
+    method: 'post',
     body: qs.stringify(params),
     data:params,
   })

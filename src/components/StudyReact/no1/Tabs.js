@@ -2,12 +2,6 @@ import React,{Component,PropTypes} from 'react';
 import styles from './styles.less';
 import classnames from 'classnames';
 
-const divStyle={
-	width:300,
-	marginTop:30,
-	marginLeft:'auto',
-	marginRight:'auto',
-}
 class Tabs extends Component {
 	constructor(props) {
 		super(props);
@@ -30,7 +24,7 @@ class Tabs extends Component {
 
 	render() {
 		return (
-		<div style={divStyle}>
+		<div>
 			<div className="ui-tabs">11</div>
 		</div>
 		)
