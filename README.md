@@ -1,8 +1,7 @@
-# maby-cli对应的模板
+# mabylove.cn 2.0版本
   
-  ## 模板简介
-  基于 [Ant Design](https://ant.design/components/checkbox-cn/) 创建的简单项目.
-  该模板目前只用于测试学习
+  ## 简介
+  该项目基于1.0版本进行重构，完全去除掉原有的无效文件，并使用 [maby-cli](https://github.com/Liuqing650/maby-cli) 导入的项目模板进行重构，项目中首页使用效果使用的是 [Ant Motion](https://motion.ant.design/) 
 
   ## 开始项目
   ```bash
