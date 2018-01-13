@@ -1,17 +1,17 @@
-const Ajax = require("robe-ajax")
+import fetch from 'dva/fetch';
 
 function parseJSON(response) {
-  return response.json()
+  return response.json();
 }
 
 function checkStatus(response) {
   if (response.status >= 200 && response.status < 300) {
-    return response
+    return response;
   }
 
-  const error = new Error(response.statusText)
-  error.response = response
-  throw error
+  const error = new Error(response.statusText);
+  error.response = response;
+  throw error;
 }
 
 /**
@@ -22,18 +22,9 @@ function checkStatus(response) {
  * @return {object}           An object containing either "data" or "err"
  */
 export default function request(url, options) {
-  
-  var params = {
-      url: url,
-      method:options.method||'GET',
-      data:options.data||{},
-      dataType:'json',
-  }
-  return Ajax.ajax(params)
-  .done((data) => {
-    //console.log(data);
-    return data
-  })
+  return fetch(url, options)
+    .then(checkStatus)
+    .then(parseJSON)
+    .then(data => ({ data }))
+    .catch(err => ({ err }));
 }
-
-

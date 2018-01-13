@@ -1,17 +1,28 @@
 {
   "entry": "src/index.js",
-  "disableCSSModules": false,
-  "less": false,
-  "publicPath": "/",
-  "autoprefixer": null,
-  "proxy": null,
+  "disableCSSModules": true,
   "extraBabelPlugins": [
-    "transform-runtime"
+    "transform-runtime",
+    ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }],
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "utils": "./utils",
+        "components": "./components",
+        "services": "./services"
+      }
+    }]
   ],
   "env": {
     "development": {
       "extraBabelPlugins": [
-        "dva-hmr"
+        "dva-hmr",
+        "transform-runtime"
+      ]
+    },
+    "production": {
+      "extraBabelPlugins": [
+        "transform-runtime"
       ]
     }
   }

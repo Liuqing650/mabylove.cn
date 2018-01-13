@@ -1,36 +1,34 @@
 import React from 'react';
 import { connect } from 'dva';
 import styles from './IndexPage.css';
-import { OverPack } from 'rc-scroll-anim';
-import TweenOne from 'rc-tween-one';
-import QueueAnim from 'rc-queue-anim';
-import {BackTop,Icon} from 'antd';
-import Index from '../components/Index/index';
-import './../components/Index/less/antMotion_style.less';
+import { Checkbox } from 'antd';
 
-const backTopStyle = {
-	color: '#57c5f7',
-	display: 'block',
-	width: '50px',
-	height: '50px',
-	lineHeight: '50px',
-    textAlign: 'center',
-    borderRadius: '5px',
-	background: 'rgba(204, 204, 204,0.2)',
-
-}
-
-function IndexPage({dispatch, location, indexModel}) {
-	const { navMenu } = indexModel;
-
+const CheckboxGroup = Checkbox.Group;
+function IndexPage() {
+  const onChange = (checkedValues) => {
+    console.log('checked = ', checkedValues);
+  }
+  const optionsWithDisabled = [
+    { label: 'Apple', value: 'Apple' },
+    { label: 'Pear', value: 'Pear' },
+    { label: 'Orange', value: 'Orange' },
+  ];
   return (
-    <div>
-        <Index />
-        <BackTop>
-	      <strong style={backTopStyle}> <Icon type="arrow-up" />Top </strong>
-	    </BackTop>
+    <div className={styles.normal}>
+      <h1 className={styles.title}>Yay! Welcome to dva!</h1>
+      <div className={styles.welcome} />
+      <ul className={styles.list}>
+        <li>To get started, edit <code>src/index.js</code> and save to reload.</li>
+        <li><a href="https://github.com/dvajs/dva-docs/blob/master/v1/en-us/getting-started.md">Getting Started</a></li>
+        <li><a href="https://www.npmjs.com/package/maby-cli" target="_blank;">How To Start ?</a></li>
+        <li><a href="https://github.com/Liuqing650/antd-maby" target="_blank;">Get maby-cli</a></li>
+      </ul>
+      <CheckboxGroup options={optionsWithDisabled} defaultValue={['Apple']} onChange={onChange} />
     </div>
   );
 }
 
-export default connect(({indexModel}) => ({indexModel}))(IndexPage);
+IndexPage.propTypes = {
+};
+
+export default connect()(IndexPage);
