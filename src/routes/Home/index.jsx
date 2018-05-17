@@ -42,10 +42,9 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log('props------------->', this.props);
-    const {indexModel} = this.props;
+    const { indexModel } = this.props;
     const children = [
-      <Nav id="nav_0_0" key="nav_0_0" isMode={this.state.isMode} navMenu={indexModel.navMenu ? indexModel.navMenu: []}/>,
+      <Nav id="nav_0_0" key="nav_0_0" isMode={this.state.isMode} navMenu={indexModel.navMenu || []}/>,
       <Content0 id="content_0_0" key="content_0_0" isMode={this.state.isMode}/>,
       <Content1 id="content_2_0" key="content_2_0" isMode={this.state.isMode}/>,
       <Content2 id="content_3_0" key="content_3_0" isMode={this.state.isMode}/>,

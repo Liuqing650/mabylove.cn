@@ -20,6 +20,7 @@
     "babel-runtime": "^6.9.2",
     "dva": "^2.1.0",
     "enquire": "0.0.2",
+    "maby-markdown-editor": "^0.0.1",
     "rc-banner-anim": "^1.0.0",
     "rc-queue-anim": "^1.4.1",
     "rc-scroll-anim": "^2.2.0",
