@@ -2,21 +2,52 @@
   "parser": "babel-eslint",
   "extends": "airbnb",
   "rules": {
-    "linebreak-style": [0],
-    "no-tabs": [0],
-    "array-callback-return": [0],
-    "no-unused-expressions": [0],
-    "react/no-array-index-key": [0],
-    "no-param-reassign": [0],
-    "jsx-a11y/img-has-alt": [0],
-    "jsx-a11y/label-has-for": [0],
-    "no-plusplus": [0],
-    "no-shadow": [0],
-    "class-methods-use-this": [0],
-    "react/require-default-props": [0],
-    "react/react-in-jsx-scope": [0],
-    "no-mixed-operators": [0],
-    "no-console": [0],
+    "linebreak-style": [
+      0
+    ],
+    "no-tabs": [
+      0
+    ],
+    "array-callback-return": [
+      0
+    ],
+    "arrow-parens": [0],
+    "no-unused-expressions": [
+      0
+    ],
+    "react/no-array-index-key": [
+      0
+    ],
+    "no-param-reassign": [
+      0
+    ],
+    "jsx-a11y/img-has-alt": [
+      0
+    ],
+    "jsx-a11y/label-has-for": [
+      0
+    ],
+    "no-plusplus": [
+      0
+    ],
+    "no-shadow": [
+      0
+    ],
+    "class-methods-use-this": [
+      0
+    ],
+    "react/require-default-props": [
+      0
+    ],
+    "react/react-in-jsx-scope": [
+      0
+    ],
+    "no-mixed-operators": [
+      0
+    ],
+    "no-console": [
+      0
+    ],
     "generator-star-spacing": [
       0
     ],
@@ -40,6 +71,7 @@
     "import/prefer-default-export": [
       0
     ],
+    "import/no-named-as-default": [0],
     "react/jsx-no-bind": [
       0
     ],
@@ -64,6 +96,7 @@
     "jsx-a11y/no-static-element-interactions": [
       0
     ],
+    "jsx-a11y/anchor-is-valid": [0],
     "no-nested-ternary": [
       0
     ],
@@ -83,6 +116,18 @@
       0
     ],
     "require-yield": [
+      0
+    ],
+    "padded-blocks": [
+      0
+    ],
+    "jsx-a11y/click-events-have-key-events": [
+      0
+    ],
+    "jsx-a11y/no-noninteractive-element-interactions": [
+      0
+    ],
+    "jsx-a11y/alt-text": [
       0
     ],
     "no-extra-semi": [
@@ -119,6 +164,7 @@
     "no-undef": [
       0
     ],
+    "object-curly-newline": [0],
     "no-unused-vars": [
       2,
       {
@@ -147,7 +193,9 @@
     "no-new-object": [
       2
     ],
-    "object-curly-spacing": [0],
+    "object-curly-spacing": [
+      0
+    ],
     "semi": [
       2,
       "always"
@@ -169,10 +217,12 @@
       0
     ],
     "comma-dangle": [
-      2,
-      "never"
+      0
     ],
     "no-underscore-dangle": [
+      0
+    ],
+    "prefer-destructuring": [
       0
     ]
   },

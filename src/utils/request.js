@@ -1,30 +1,66 @@
-import fetch from 'dva/fetch';
+import axios from 'axios';
+import Uuid from 'node-uuid';
+import config from './config';
 
-function parseJSON(response) {
-  return response.json();
-}
-
-function checkStatus(response) {
-  if (response.status >= 200 && response.status < 300) {
-    return response;
+// 请求之前传递携带 token
+axios.interceptors.request.use(
+  axiosConfig => {
+    axiosConfig.headers['auth-id'] = `${Uuid.v4()}`;
+    axiosConfig.headers['auth-token'] = 'maby-antd';
+    axiosConfig.headers['Cache-Control'] = 'no-cache';
+    if (!axiosConfig.params) {
+      axiosConfig.params = {
+        timestamp: new Date().getTime()
+      };
+    } else {
+      axiosConfig.params.timestamp = new Date().getTime();
+    }
+    return axiosConfig;
+  },
+  error => {
+    console.log('request error', error);
   }
+);
 
-  const error = new Error(response.statusText);
-  error.response = response;
-  throw error;
-}
+axios.interceptors.response.use((response) => response, (error) => {
+  if (axios.isCancel(error)) {
+    return Promise.reject(error);
+  }
+  if (error && error.response.data.errorCode === 401000) {
+    window.location.href = '/';
+  }
+  return Promise.reject(error);
+});
 
-/**
- * Requests a URL, returning a promise.
- *
- * @param  {string} url       The URL we want to request
- * @param  {object} [options] The options we want to pass to "fetch"
- * @return {object}           An object containing either "data" or "err"
- */
-export default function request(url, options) {
-  return fetch(url, options)
-    .then(checkStatus)
-    .then(parseJSON)
-    .then(data => ({ data }))
-    .catch(err => ({ err }));
-}
+// 修改 url
+const modifyUrl = (url) => {
+  if (/^http[s]?:(?:\/\/)/.test(url)) {
+    return url;
+  }
+  return `${config.host}${url}`;
+};
+// 获取GET, PUT, POST, DELETE请求
+// options 中可以传递 CancelToken
+// CancelToken 获取方法
+// const source = axios.CancelToken.source();
+// options = {cancelToken: source.token}
+const GET = (url, params, options = {}) => {
+  return axios.get(modifyUrl(url), params, options);
+};
+const POST = (url, params, options = {}) => {
+  return axios.post(modifyUrl(url), params, options);
+};
+const PUT = (url, params, options = {}) => {
+  return axios.put(modifyUrl(url), params, options);
+};
+const DELETE = (url, params, options = {}) => {
+  return axios.delete(modifyUrl(url), params, options);
+};
+const RequestAxios = () => ({
+  get: GET,
+  post: POST,
+  put: PUT,
+  delete: DELETE
+});
+const request = new RequestAxios();
+export default request;

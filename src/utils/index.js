@@ -1,7 +1,7 @@
-import nav from './nav';
+import config from './config';
 import request from './request';
 
-export default {
-	nav,
-	request
-}
+export {
+  config,
+  request
+};
