@@ -5,3 +5,4 @@ node_modules/
 public/dist/*
 npm-debug.log
 yarn-error.log
+stats.json
