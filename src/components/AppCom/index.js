@@ -41,44 +41,62 @@ class AppCom extends React.Component {
         dispatch(routerRedux.push('/home'));
       }
     };
-    return (
-      <div className="appRoot">
-        <TweenOne
-          animation={{ opacity: 0, type: 'from' }}
-        >
-          <NavBar>
-            <div className={styles.navbar}>
-              <div className="clearfix">
-                <div className={styles.logoWrap}>
+    const createContent = () => {
+      const notNavRouter = ['/login'];
+      const pathname = location.pathname;
+      if (notNavRouter.includes(pathname)) {
+        return (
+          <TweenOne
+            animation={{ y: -30, type: 'from', ease: 'easeOutQuad' }}
+          >
+            {children}
+          </TweenOne>
+        );
+      }
+      return (
+        <div>
+          <TweenOne
+            animation={{ opacity: 0, type: 'from' }}
+          >
+            <NavBar>
+              <div className={styles.navbar}>
+                <div className="clearfix">
+                  <div className={styles.logoWrap}>
+                    <TweenOne
+                      animation={{ x: -30, type: 'from', ease: 'easeOutQuad' }}
+                    >
+                      <img src={logoPic} onClick={onNavBarLogoClick} className={styles.logo} />
+                    </TweenOne>
+                  </div>
                   <TweenOne
-                    animation={{ x: -30, type: 'from', ease: 'easeOutQuad' }}
+                    className={styles.navs}
+                    animation={{ x: 30, type: 'from', ease: 'easeOutQuad' }}
                   >
-                    <img src={logoPic} onClick={onNavBarLogoClick} className={styles.logo} />
+                    <Menu
+                      onClick={this.changeNavBar}
+                      mode="horizontal"
+                      selectedKeys={[selectedNav]}
+                    >
+                      {this.navChildren()}
+                    </Menu>
                   </TweenOne>
                 </div>
-                <TweenOne
-                  className={styles.navs}
-                  animation={{ x: 30, type: 'from', ease: 'easeOutQuad' }}
-                >
-                  <Menu
-                    onClick={this.changeNavBar}
-                    mode="horizontal"
-                    selectedKeys={[selectedNav]}
-                  >
-                    {this.navChildren()}
-                  </Menu>
-                </TweenOne>
               </div>
-            </div>
-          </NavBar>
-        </TweenOne>
-        <TweenOne
-          animation={{ y: -30, type: 'from', ease: 'easeOutQuad' }}
-        >
-          <Content>
-            {children}
-          </Content>
-        </TweenOne>
+            </NavBar>
+          </TweenOne>
+          <TweenOne
+            animation={{ y: -30, type: 'from', ease: 'easeOutQuad' }}
+          >
+            <Content>
+              {children}
+            </Content>
+          </TweenOne>
+        </div>
+      );
+    };
+    return (
+      <div className="appRoot">
+        {createContent()}
       </div>
     );
   }
