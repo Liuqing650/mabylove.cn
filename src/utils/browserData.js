@@ -16,4 +16,3 @@ function getStorage(){
 }
 
 export default storage;
-// module.exports = storage;

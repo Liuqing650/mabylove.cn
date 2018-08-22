@@ -14,7 +14,7 @@ String.prototype.humpToHyphen = function () {
   return this.replace(/([A-Z])/g,"-$1").toLowerCase()
 }
 
-module.exports = {
+export default {
   config,
   request
 }

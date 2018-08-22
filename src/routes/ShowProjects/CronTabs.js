@@ -5,7 +5,7 @@ import Cron from '../../components/ShowProject/CronTabs/cron';
 
 function CronTabs({ location, dispatch, cronTabs }) {
 	const {
-		cronTitle,cronModalVisible,isDesabled,dispatchItem,groupname,
+		cronTitle,cronModalVisible,isDesabled,dispatchItem,groupname,updateParams,
 	    timelevel,radioValue,beforeValue,endValue,cronDefaultValue,cronDefaultBoxValue,checkedCron,selectLevel,selectRadio,checkboxValue,
 	    secondValue,minuteValue,hourValue,dayValue,monthValue,weekValue,yearValue,cronValue,cronViewDate,
 	} = cronTabs;

@@ -1,6 +1,5 @@
 import { getRoleList,queryMenu,getMenuByRoleId,updateRole,addMenuToRole,add,searchByKeyword,deleteRole } from '../../services/Cms/roleManage'
 import { parse } from 'qs'
-import key from 'keymaster';
 import {message} from 'antd';
 
 export default {

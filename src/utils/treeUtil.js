@@ -21,4 +21,4 @@ function getTree(data, pid) {
 var treeUtil = {
 	getTree:getTree
 }
-module.exports = treeUtil
+export default treeUtil

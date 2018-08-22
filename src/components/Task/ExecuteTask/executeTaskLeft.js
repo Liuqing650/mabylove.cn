@@ -1,5 +1,6 @@
 import React from 'react';
-import { Menu, Icon,Spin,Badge } from 'antd';
+import { Menu, message,Spin,Badge } from 'antd';
+import {hashHistory} from 'dva/router'
 import styles from './executeTaskStyle.less';
 import storage from '../../../utils/browserData'
 

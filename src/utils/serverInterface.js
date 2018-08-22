@@ -17,4 +17,4 @@ if(debug){
 	urlData.video=config.host+'/upload/uploadVideo';
 }
 
-module.exports = urlData
+export default urlData

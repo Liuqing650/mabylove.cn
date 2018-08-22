@@ -4,7 +4,7 @@ import { Row, Col } from 'antd';
 import BlogRight from '../../components/Blog/BlogInfo/blogRight';
 import DetailComponents from '../../components/Blog/BlogDetail/blogDetail';
 import BlogComment from '../../components/Blog/BlogDetail/blogComment';
-import CommentModal from '../../components/Blog/BlogDetail/CommentModal';
+import CommentModal from '../../components/Blog/BlogDetail/commentModal';
 import styles from './BlogStyle.less';
 
 function BlogDetail({dispatch,location,blog}) {

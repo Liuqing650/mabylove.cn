@@ -62,7 +62,7 @@ const uploadContent = ({
 			    	message.info("上传成功")
 			    	
 				} else if (info.file.response.result ===false) {
-			    	message.error("上传失败"+nfo.file.msg)
+			    	message.error("上传失败"+info.file.msg)
 				}
 			}
 			

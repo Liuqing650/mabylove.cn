@@ -1,12 +1,8 @@
-import React from 'react';
-import { parse } from 'qs'
-import {message} from 'antd'
 import {logout} from '../services/loginPage';
 import storage from '../utils/browserData';
 
 export default {
 	namespace:'mainView',
-
 	state:{
 		navMenu:[],
 		defaultKey: ['home'],

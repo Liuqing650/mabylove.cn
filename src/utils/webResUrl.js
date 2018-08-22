@@ -107,4 +107,4 @@ const webUrl={
 	}
 }
 
-module.exports = webUrl;
+export default webUrl;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'dva';
-import App from '../../components/StudyReact/no1/App';
+import App from '../../components/StudyReact/no1/app';
 
 function TabsReact(){
 

@@ -16,4 +16,4 @@ if(debug){
 	config.host = 'http://localhost:8081';
 }
 
-module.exports = config
+export default config

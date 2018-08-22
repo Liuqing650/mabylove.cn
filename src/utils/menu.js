@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     key: 'dashboard',
     name: '仪表盘',

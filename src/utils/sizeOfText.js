@@ -46,4 +46,4 @@ var sizeof = function(str, charset){
     return total;
 }
 
-module.exports = sizeof;
+export default sizeof;
