@@ -1,5 +1,5 @@
 import dva from 'dva';
-import './index.css';
+import './index.less';
 
 // 1. Initialize
 const app = dva();
@@ -26,16 +26,6 @@ app.model(require('./models/Task/newTask').default);
 app.model(require('./models/Task/allotTask').default);
 app.model(require('./models/Task/executeTask').default);
 app.model(require('./models/Task/progressTask').default);
-
-//cms
-app.model(require('./models/Cms/appModel').default);
-app.model(require('./models/Cms/userManage').default);
-app.model(require('./models/Cms/menuManage').default);
-app.model(require('./models/Cms/roleManage').default);
-app.model(require('./models/Cms/groupManage').default);
-app.model(require('./models/Cms/picture').default);
-app.model(require('./models/Cms/wisedoctor').default);
-
 
 app.model(require('./models/test').default);
 

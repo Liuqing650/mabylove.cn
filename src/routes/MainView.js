@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'dva';
 import Main from '../components/main';
 
-
 function MainView(state) {
 
   return (

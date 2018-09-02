@@ -64,7 +64,14 @@ export default {
 		// }
 
 		navSuccess(state,action){
-			var tempMenu = [{menu_name: '首页',src: 'home'}, {menu_name: '交流广场',src:'blog'}, {menu_name: '申请帐号',src:'regist'}, {menu_name: '任务中心',src:'task'},{menu_name: '更新日志', src:'updatelog'},{menu_name: '登录', src:'login'}];
+			var tempMenu = [
+				{menu_name: '首页',src: 'home'},
+				{menu_name: '交流广场',src:'blog'},
+				// {menu_name: '申请帐号',src:'regist'},
+				{menu_name: '任务中心',src:'task'},
+				{menu_name: '更新日志', src:'updatelog'},
+				// {menu_name: '登录', src:'login'}
+			];
 			var loginSuccessMenu = [];
 			if(storage.isLogin) {
 				state.loginState = true;
@@ -84,7 +91,6 @@ export default {
 			}
 			state.initMenu = tempMenu;
 			state.navMenu = loginSuccessMenu;
-			var tempMenuItem = state.navMenu
 			var pathname = action.payload;
 			var tempPath = pathname.split("/")[pathname.split("/").length-1];
 			state.selectedKeys = [tempPath]

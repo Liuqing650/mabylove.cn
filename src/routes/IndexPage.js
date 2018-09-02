@@ -14,8 +14,8 @@ const backTopStyle = {
 	width: '50px',
 	height: '50px',
 	lineHeight: '50px',
-    textAlign: 'center',
-    borderRadius: '5px',
+	textAlign: 'center',
+	borderRadius: '5px',
 	background: 'rgba(204, 204, 204,0.2)',
 
 }
@@ -27,8 +27,8 @@ function IndexPage({dispatch, location, indexModel}) {
     <div>
         <Index />
         <BackTop>
-	      <strong style={backTopStyle}> <Icon type="arrow-up" />Top </strong>
-	    </BackTop>
+					<strong style={backTopStyle}> <Icon type="arrow-up" />Top </strong>
+				</BackTop>
     </div>
   );
 }

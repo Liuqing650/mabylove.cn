@@ -9,7 +9,8 @@ import './Index/less/antMotion_style.less';
 import styles from './mainStyle.less';
 
 function Main(state) {
-  const { children, location,mainView,dispatch } = state;
+  const { children, location, mainView, dispatch } = state;
+  console.log('children-------->', children);
   const navProps = {
     navMenu:mainView,
     loginState: mainView.loginState,
@@ -57,4 +58,4 @@ Main.propTypes = {
   location: PropTypes.object,
 }
 
-export default connect(({mainView})=>({mainView}))(Main)
+export default connect(({mainView})=>({mainView}))(Main);

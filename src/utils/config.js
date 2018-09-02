@@ -1,4 +1,4 @@
-var debug = true;
+var debug = false;
 
 var config =  {
   name: '帷中暮色',
@@ -9,7 +9,7 @@ var config =  {
   needLogin:true,
   github:'https://github.com/Liuqing650',
   mail:'mabyloveweb@163.com',
-  host:window.__dmp_cofig.host
+  host: 'http://123.207.100.248:8081'
 };
 
 if(debug){

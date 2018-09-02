@@ -1,0 +1,22 @@
+{
+    "entry": "src/index.js",
+    "disableCSSModules": true,
+    "less": true,
+    "publicPath": "/",
+    "autoprefixer": null,
+    "env": {
+        "development": {
+        "extraBabelPlugins": [
+            "dva-hmr",
+            "transform-runtime",
+            ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }]
+        ]
+        },
+        "production": {
+            "extraBabelPlugins": [
+                "transform-runtime",
+                ["import", { "libraryName": "antd", "libraryDirectory": "es", "style": true }]
+            ]
+        }
+    }
+}

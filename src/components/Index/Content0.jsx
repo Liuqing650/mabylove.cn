@@ -3,9 +3,9 @@ import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 import {Button,Icon} from 'antd';
 import BannerAnim, { Element } from 'rc-banner-anim';
-import 'rc-banner-anim/assets/index.css';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
 import webUrl from '../../utils/webResUrl';
+import 'rc-banner-anim/assets/index.css';
 
 const BgElement = Element.BgElement;
 class Banner extends React.Component {

@@ -3,7 +3,7 @@ import { parse } from 'qs';
 import {message,} from 'antd';
 import {hashHistory} from 'dva/router';
 import {getTaskList, getTaskListByUser, getTaskDetail, addTask, addTaskDetail, updateTask, hideTask, updateTaskDetail, } from '../../services/taskManage';
-import { getList,getGroupByUserId} from '../../services/Cms/groupManage';
+// import { getList,getGroupByUserId} from '../../services/Cms/groupManage';
 import storage from '../../utils/browserData';
 export default {
 	namespace: 'newTask',
@@ -53,17 +53,17 @@ export default {
 			// 获取任务列表
 			const taskData = yield call(getTaskListByUser,obj);
 			// 获取分组列表
-			const groupData = yield call(getGroupByUserId,obj);
-			if(taskData&&groupData) {
-				yield put({
-					type:'querySuccess',
-					payload: {
-						user_id:obj.userId,
-						task_data:taskData,
-						groupData:groupData,
-					}
-				})
-			}
+			// const groupData = yield call(getGroupByUserId,obj);
+			// if(taskData&&groupData) {
+			// 	yield put({
+			// 		type:'querySuccess',
+			// 		payload: {
+			// 			user_id:obj.userId,
+			// 			task_data:taskData,
+			// 			groupData:groupData,
+			// 		}
+			// 	})
+			// }
 		},
 		*queryTaskDetail({ payload }, { call, put }) {
 			yield put({type:'showDetailLoading'});
