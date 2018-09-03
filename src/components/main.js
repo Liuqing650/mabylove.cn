@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'dva';
 import { Layout } from 'antd';
 import ReactDOM from 'react-dom';
@@ -8,8 +9,8 @@ import Footer from './Index/Footer';
 import './Index/less/antMotion_style.less';
 import styles from './mainStyle.less';
 
-function Main(state) {
-  const { children, location, mainView, dispatch } = state;
+function Main(props) {
+  const { children, location, mainView, dispatch } = props;
   console.log('children-------->', children);
   const navProps = {
     navMenu:mainView,

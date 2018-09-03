@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import { Input, InputNumber,Row,Col,message,Icon, Tag, Button } from 'antd';
 
 const controllerStyle = {

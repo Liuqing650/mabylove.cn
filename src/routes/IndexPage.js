@@ -1,11 +1,10 @@
 import React from 'react';
 import { connect } from 'dva';
-import styles from './IndexPage.css';
-import { OverPack } from 'rc-scroll-anim';
 import TweenOne from 'rc-tween-one';
 import QueueAnim from 'rc-queue-anim';
 import {BackTop,Icon} from 'antd';
 import Index from '../components/Index/index';
+import styles from './IndexPage.less';
 import './../components/Index/less/antMotion_style.less';
 
 const backTopStyle = {
@@ -22,7 +21,7 @@ const backTopStyle = {
 
 function IndexPage({dispatch, location, indexModel}) {
 	const { navMenu } = indexModel;
-
+	console.log(navMenu);
   return (
     <div>
         <Index />

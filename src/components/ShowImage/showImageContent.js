@@ -154,7 +154,4 @@ const showImage = ({
   );
 };
 
-showImage.propTypes = {
-};
-
 export default showImage;

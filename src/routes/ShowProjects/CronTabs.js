@@ -1,5 +1,4 @@
-import React, { PropTypes } from 'react';
-import { routerRedux } from 'dva/router';
+import React from 'react';
 import { connect } from 'dva';
 import Cron from '../../components/ShowProject/CronTabs/cron';
 

@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
 import serverInterface from '../../utils/serverInterface';
 import { Modal,Upload,Layout,Row,Col,Icon,Spin,message,Alert,notification } from 'antd';
 

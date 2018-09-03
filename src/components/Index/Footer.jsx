@@ -1,18 +1,14 @@
-import React,{ PropTypes } from 'react';
-import QueueAnim from 'rc-queue-anim';
+import React from 'react';
+import PropTypes from 'prop-types';
 import TweenOne from 'rc-tween-one';
-import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
+import ScrollOverPack from 'rc-scroll-anim';
 
+const OverPack = ScrollOverPack.OverPack;
 const Footer = ({
 }) => {
-  // static propTypes = {
-  //   dataSource: React.PropTypes.object,
-  // };
-
   return (<OverPack
     className={`footer0`}
     playScale={0.05}
-    hideProps={{ footer: { reverse: true } }}
   >
     <TweenOne
       animation={{ y: '+=30', opacity: 0, type: 'from' }}
@@ -29,7 +25,7 @@ const Footer = ({
 
 Footer.propTypes = {
   className: PropTypes.string,
-  dataSource: React.PropTypes.object,
+  dataSource: PropTypes.object,
 };
 
 Footer.defaultProps = {

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import QueueAnim from 'rc-queue-anim';
 import TweenOne from 'rc-tween-one';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
@@ -8,8 +9,8 @@ import webUrl from '../../utils/webResUrl';
 class Content extends React.Component {
 
   static propTypes = {
-    id: React.PropTypes.string,
-    className: React.PropTypes.string,
+    id: PropTypes.string,
+    className: PropTypes.string,
   };
 
   static defaultProps = {
@@ -25,7 +26,6 @@ class Content extends React.Component {
       >
         <OverPack
           className={`content-template ${this.props.className}`}
-          hideProps={{ img: { reverse: true } }}
           location={this.props.id}
         >
           <TweenOne

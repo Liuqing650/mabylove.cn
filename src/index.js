@@ -1,6 +1,33 @@
+import '@babel/polyfill';
 import dva from 'dva';
+import createHistory from 'history/lib/createHashHistory';
+// 引入路由
+import router from './router';
+// 引入model
+import appModel from './models/app';
+import mainView from './models/mainView';
+import indexModel from './models/indexModel';
+import loginPage from './models/loginPage';
+import updateLog from './models/updateLog';
+import helpDoc from './models/helpDoc';
+import myself from './models/myself';
+import practice from './models/practice';
+import showImage from './models/showImage';
+import showProject from './models/showProject';
+import uploadFile from './models/uploadFile';
+import userRegist from './models/userRegist';
+import blog from './models/blog';
+import taskManage from './models/Task/taskManage';
+import newTask from './models/Task/newTask';
+import allotTask from './models/Task/allotTask';
+import executeTask from './models/Task/executeTask';
+import progressTask from './models/Task/progressTask';
+// 引入全局样式
 import './index.less';
+// 引入mock
+import './mock';
 
+const history = createHistory();
 // 1. Initialize
 const app = dva();
 
@@ -8,29 +35,29 @@ const app = dva();
 // app.use({});
 
 // 3. Model
-app.model(require('./models/mainView').default);
-app.model(require('./models/indexModel').default);
-app.model(require('./models/loginPage').default);
-app.model(require('./models/updateLog').default);
-app.model(require('./models/helpDoc').default);
-app.model(require('./models/myself').default);
-app.model(require('./models/practice').default);
-app.model(require('./models/showProject').default);
-app.model(require('./models/showImage').default);
-app.model(require('./models/ShowProjects/cronTabs').default);
-app.model(require('./models/uploadFile').default);
-app.model(require('./models/userRegist').default);
-app.model(require('./models/blog').default);
-app.model(require('./models/Task/taskManage').default);
-app.model(require('./models/Task/newTask').default);
-app.model(require('./models/Task/allotTask').default);
-app.model(require('./models/Task/executeTask').default);
-app.model(require('./models/Task/progressTask').default);
-
-app.model(require('./models/test').default);
+// bug: 不用require()导入
+// https://github.com/dvajs/dva/issues/261
+app.model(appModel);
+app.model(mainView);
+app.model(indexModel);
+app.model(loginPage);
+app.model(updateLog);
+app.model(helpDoc);
+app.model(myself);
+app.model(practice);
+app.model(showImage);
+app.model(showProject);
+app.model(uploadFile);
+app.model(userRegist);
+app.model(blog);
+app.model(taskManage);
+app.model(newTask);
+app.model(allotTask);
+app.model(executeTask);
+app.model(progressTask);
 
 // 4. Router
-app.router(require('./router').default);
+app.router(router);
 
 // 5. Start
 app.start('#root');

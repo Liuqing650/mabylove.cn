@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
 import { Tabs, Radio, Input,message, InputNumber, Checkbox } from 'antd';
 const TabPane = Tabs.TabPane;
 const RadioGroup = Radio.Group;
@@ -13,6 +13,14 @@ const radioStyle = {
       height: '30px',
       lineHeight: '30px',
       margin: '2px 0px',
+};
+
+const radioSpecilStyle = {
+	display: 'block',
+	height: '30px',
+	lineHeight: '30px',
+	margin: '2px 0px',
+	whiteSpace: 'normal'
 };
 
 const  tabPaneStyle = {
@@ -120,7 +128,7 @@ function cronEdit({
 					        	<InputNumber style={inputStyle} disabled={selectLevel == '1' ? (selectRadio == '3'? false:true):true} min={0} max={59} onChange={onNumberE} defaultValue={cronDefaultValue[1]} />
 					        	秒执行一次
 					        </Radio>
-					        <Radio style={radioStyle,{whiteSpace: 'normal'}} value={4}  checked={checkedCron}>
+					        <Radio style={radioSpecilStyle} value={4}  checked={checkedCron}>
 					          	指定
 					          	<div style={chackBoxStyle}>
 					          		<CheckboxGroup options={second} disabled={selectLevel == '1' ? (selectRadio == '4'? false:true):true} onChange={onCheckBoxsChange} />
@@ -147,7 +155,7 @@ function cronEdit({
 					        	<InputNumber style={inputStyle} disabled={selectLevel == '2' ? (selectRadio == '3' ? false:true):true} min={0} max={59} onChange={onNumberE} defaultValue={cronDefaultValue[1]} />
 					        	分钟执行一次
 					        </Radio>
-					        <Radio style={radioStyle,{whiteSpace: 'normal'}} value={4}>
+					        <Radio style={radioSpecilStyle} value={4}>
 					          	指定
 					          	<div style={chackBoxStyle}>
 					          		<CheckboxGroup options={minute} disabled={selectLevel == '2' ? (selectRadio == '4' ? false:true):true} onChange={onCheckBoxsChange} />
@@ -174,7 +182,7 @@ function cronEdit({
 					        	<InputNumber style={inputStyle} disabled={selectLevel == '3' ? (selectRadio == '3' ? false:true):true} min={0} max={23} onChange={onNumberE} defaultValue={cronDefaultValue[1]} />
 					        	小时执行一次
 					        </Radio>
-					        <Radio style={radioStyle,{whiteSpace: 'normal'}} value={4}>
+					        <Radio style={radioSpecilStyle} value={4}>
 					          	指定
 					          	<div style={chackBoxStyle}>
 					          		<CheckboxGroup options={hour} disabled={selectLevel == '3' ? (selectRadio == '4' ? false:true):true} onChange={onCheckBoxsChange} />
@@ -212,7 +220,7 @@ function cronEdit({
 					        <Radio style={radioStyle} value={6}>
 					          	本月最后一天
 					        </Radio>
-					        <Radio style={radioStyle,{whiteSpace: 'normal'}} value={7}>
+					        <Radio style={radioSpecilStyle} value={7}>
 					          	指定
 					          	<div style={chackBoxStyle}>
 					          		<CheckboxGroup options={day} disabled={selectLevel == '4' ? (selectRadio == '7' ? false:true):true} onChange={onCheckBoxsChange} />
@@ -242,7 +250,7 @@ function cronEdit({
 					        	<InputNumber style={inputStyle} disabled={selectLevel == '5' ? (selectRadio == '4' ? false:true):true} min={1} max={12} onChange={onNumberE} defaultValue={cronDefaultValue[1]} />
 					        	月执行一次
 					        </Radio>
-					        <Radio style={radioStyle,{whiteSpace: 'normal'}} value={5}>
+					        <Radio style={radioSpecilStyle} value={5}>
 					          	指定
 					          	<div style={chackBoxStyle}>
 					          		<CheckboxGroup options={month} disabled={selectLevel == '5' ? (selectRadio == '5' ? false:true):true} onChange={onCheckBoxsChange} />
@@ -275,7 +283,7 @@ function cronEdit({
 					          	本月最后一个星期
 					          	<InputNumber style={inputStyle} disabled={selectLevel == '6' ? (selectRadio == '5' ? false:true):true} min={1} max={7} defaultValue={cronDefaultValue[1]} onChange={onNumberOne} />
 					        </Radio>
-					        <Radio style={radioStyle,{whiteSpace: 'normal'}} value={6}>
+					        <Radio style={radioSpecilStyle} value={6}>
 					          	指定
 					          	<div style={chackBoxStyle}>
 					          		<CheckboxGroup options={week} disabled={selectLevel == '6' ? (selectRadio == '6' ? false:true):true} onChange={onCheckBoxsChange} />

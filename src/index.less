@@ -1,4 +1,101 @@
-
 html, body, :global(#root) {
   height: 100%;
+	font-size: 16px;
+}
+:global {
+  body {
+    margin: 0;
+    background: #eee;
+  }
+  /* 处理全局导航不靠边样式 */
+  .my-main-header {
+    padding: 0 !important;
+  }
+  .transparentBackgrond {margin-top:30px;}
+
+
+/*用户头像*/
+.user .ant-menu-item,.user .ant-menu-submenu-title {
+  /*margin-left: 30px;*/
+  padding: 0;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
+  -webkit-text-overflow:ellipsis;
+}
+
+  /*修改注册表单样式*/
+.myFormStyle {
+padding-left: 15%;
+}
+.myFormPading {
+padding: 0 !important;
+}
+.myFormStyle .ant-form-item-label {
+  border-radius: 20px 0 0 20px;
+  text-align: center;
+  background: #108ee9;
+}
+.myFormStyle .ant-form-item-label label {
+color: #fff;
+}
+.myFormStyle .ant-form-item .ant-input {
+ border-radius: 0 20px 20px 0 !important;
+}
+.checkboxStyles .ant-checkbox-wrapper:not(:last-child) {
+  margin-right: 0 !important;
+}
+.checkboxStyles .ant-checkbox-wrapper + span, .ant-checkbox + span {
+padding-right: 0 !important;
+} 
+/* 修改博客列表中tabs样式 */
+.my-tabs-style .ant-tabs-bar {
+padding: 0 20px !important;
+}
+.my-tabs-style .ant-tabs-top .ant-tabs-bar .ant-tabs-nav-container{
+height: 60px !important;
+position: relative;
+bottom: -1px;
+}
+
+.my-tabs-style .ant-tabs-nav {
+height: 60px !important;
+}
+
+.my-tabs-style .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-prev { bottom: -14px !important;}
+
+.my-tabs-style .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-next { bottom: -14px !important;}
+.my-tabs-style .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-prev-icon,.ant-tabs-tab-next-icon {
+font-size: 45px !important;
+font-weight: 900 !important;
+color: #fff !important;
+}
+
+.my-tabs-style .ant-tabs.ant-tabs-card > .ant-tabs-bar  .ant-tabs-tab{
+color: #fff;
+width: 150px;
+background: transparent;
+border: none;
+/*transform: skewX(-20deg) !important;*/
+border-radius: 0;
+}
+.my-tabs-style .ant-tabs.ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active{
+ /*background: #8bc34a;*/
+ color: #5b5b5b;
+ text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+ border-bottom: 3px solid;
+}
+.alphaColorStyle {padding: 10px 0;}
+.alphaColorStyle .alpha-picker{    width: 86% !important; display: block;}
+
+/* 富文本编辑器宽度 */
+.rte-editor {min-height: 500px;}
+
+/* 修改任务列表出的加载样式 */
+.newTaskDetailStyle .ant-spin-nested-loading .ant-spin-dot {
+left: 0 !important;
+}
+
 }

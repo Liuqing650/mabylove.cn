@@ -1,6 +1,7 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import QueueAnim from 'rc-queue-anim';
-import TweenOne from 'rc-tween-one';
+import TweenOne, { TweenOneGroup } from 'rc-tween-one';
 import {Button,Icon} from 'antd';
 import BannerAnim, { Element } from 'rc-banner-anim';
 import OverPack from 'rc-scroll-anim/lib/ScrollOverPack';
@@ -19,19 +20,19 @@ class Banner extends React.Component {
       webUrl.banner.xxlRed,
       webUrl.banner.xxlBlack,
     ]
-    const childrenToRender = childrenData.map((item, i) => {
+    const childrenToRender = childrenData.map((item, index) => {
       const children = item.children;
       const isImg = children.title.children
         .match(/\.(gif|jpg|jpeg|png|JPG|PNG|GIF|JPEG)$/);
       return (<Element
-        key={i}
+        key={`ban-${index}`}
         prefixCls="banner-user-elem"
       >
         <BgElement
           className="bg"
           key="bg"
           style={children.bg && children.bg.style || {
-            backgroundImage: `url(${defaultImg[i]})`,
+            backgroundImage: `url(${defaultImg[index]})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
@@ -66,17 +67,25 @@ class Banner extends React.Component {
         </QueueAnim>
       </Element>);
     });
+    console.log('childrenToRender------>', childrenToRender);
+    const props = this.props;
+    console.log('props------>', props);
     return (
-      <TweenOne animation={{ opacity: 0, type: 'from' }}>
-        <OverPack
-          {...this.props}
-          hideProps={{ icon: { reverse: true } }}
+      <OverPack
+          {...props}
         >
-          <BannerAnim
+          <TweenOneGroup
             key="banner"
+            enter={{ opacity: 0, type: 'from' }}
+            leave={{ opacity: 0 }}
+            component=""
           >
-            {childrenToRender}
-          </BannerAnim>
+            <BannerAnim
+              key="banner"
+            >
+              {childrenToRender}
+            </BannerAnim>
+          </TweenOneGroup>
           <TweenOne
             animation={{ y: '-=20', yoyo: true, repeat: -1, duration: 1000 }}
             className={`${this.props.className}-icon`}
@@ -86,7 +95,6 @@ class Banner extends React.Component {
             <Icon type="down" />
           </TweenOne>
         </OverPack>
-      </TweenOne>
     );
   }
 }

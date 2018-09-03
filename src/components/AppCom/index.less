@@ -1,0 +1,40 @@
+.navbar {
+  .logoWrap {
+    display: inline-block;
+    position: absolute;
+    left: 4%;
+    width: 150px;
+    line-height: 64px;
+    .logo {
+      width: 100%;
+      cursor: pointer;
+      & img {
+        vertical-align: middle;
+        display: inline-block;
+      }
+      & a {
+        display: block;
+      }
+    }
+  }
+  .navs {
+    float: right;
+    margin-right: 4%;
+    line-height: 64px;
+    position: relative;
+    :global {
+      .ant-menu {
+        background: transparent !important;
+        color: #fff !important;
+        line-height: 62px !important;
+      }
+      .ant-menu-horizontal {
+        border-bottom-color: transparent !important;
+      }
+      .ant-menu li {
+        text-align: center !important;
+        width: 100px !important;
+      }
+    }
+  }
+}

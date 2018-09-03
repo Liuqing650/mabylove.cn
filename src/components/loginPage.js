@@ -1,4 +1,4 @@
-import React,{PropTypes} from 'react';
+import React from 'react';
 import {Form, Icon,Input,Spin, Alert, Button,Radio, Checkbox,message } from 'antd';
 
 const FormItem = Form.Item;
